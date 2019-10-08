@@ -7,3 +7,5 @@
 ## [2. Ubuntu のインストール](./sections/sec02_install_ubuntu.md)
 
 ## [3. ブラウザのインストール](./sections/sec03_install_browser.md)
+
+## [4. エディタのインストール](./sections/sec04_install_editor.md)
