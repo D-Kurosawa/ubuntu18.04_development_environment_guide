@@ -1,7 +1,7 @@
 # Ubuntu開発マシン構築ガイド
 
-## [はじめに](./sections/sec01_introduction.md)
+## [はじめに](./sections/sec00_introduction.md)
 
-## [1. Ubuntu をインストールするマシン](./sections/sec02_machine.md)
+## [1. Ubuntu をインストールするマシン](./sections/sec01_machine.md)
 
-## [2. Ubuntu のインストール](./sections/sec03_install_ubuntu.md)
+## [2. Ubuntu のインストール](./sections/sec02_install_ubuntu.md)
