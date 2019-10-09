@@ -1,11 +1,11 @@
 # ブラウザのインストール
 
-## 1. Google Chromeのインストール（deb版）
+## 1. Google Chrome のインストール（deb版）
 
 Ubuntuには`Fire Fox`がデフォルトでインストールされてますが、`Google Chrome`を普段から利用しているので、使い勝手という観点から`Google Chrome`をインストールします。  \
 最も簡単な方法はGUIから`Fire Fox`を起動してChromeを検索してイントールする方法です。リポジトリも登録されるのでアップデートもできます。
 
-## 2. Google Chromeのインストール（apt版）
+## 2. Google Chrome のインストール（apt版）
 
 `apt`リポジトリとして`Google Chrome`を追加するには、以下のコマンドを実行します。
 
