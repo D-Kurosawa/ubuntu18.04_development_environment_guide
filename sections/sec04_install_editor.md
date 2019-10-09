@@ -5,11 +5,11 @@
 Ubuntuのエディタといったら「VimかEmacsでしょ」と言われそうですが、普段から使い慣れている`Visual Stadio Code`をインストールします。Vimは追って。。。
 
 1. `Chrome`で`vs code`と検索し[公式サイト](https://code.visualstudio.com/)にいく
-2. `Download`をクリックする
-3. `Linux`の下の方にある`Snap Store`を選択
-4. `Install`をクリック
-5. `Install using the command line`に記載されているコマンドをターミナルに入力
-6. ターミナルに`code`と入力して`Visual Stadio Code`が立ち上げればOK
+1. `Download`をクリックする
+1. `Linux`の下の方にある`Snap Store`を選択
+1. `Install`をクリック
+1. `Install using the command line`に記載されているコマンドをターミナルに入力
+1. ターミナルに`code`と入力して`Visual Stadio Code`が立ち上げればOK
 
 簡単ですね。これからは**Snapを用いたアプリ導入**が主流になるみたいなので使ってみました。
 
