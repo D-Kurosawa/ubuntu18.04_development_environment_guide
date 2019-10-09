@@ -12,4 +12,4 @@
 
 ## 5. 開発環境の構築
 
-### [5-1. ビルドツール（gcc, g++, make）のインストール](./sections/sec05_01_install_build_essential.md)
+### [5-1. ビルドツール（gcc, g++, make）のインストール](./sections/sec05-01_install_build_essential.md)
