@@ -44,6 +44,8 @@ nano hello.cpp
 
 ### サンプルコード
 
+---
+
 ```c
 // [hello.c]
 #include <stdio.h>
@@ -68,15 +70,18 @@ int main()
 }
 ```
 
+---
+
 それぞれのソースを以下のコマンドでコンパイルして実行します。  \
 ターミナルに`Hello World!`と表示されれば成功です。
 
 ```bash
 # コピペを簡単に行うために、ターミナルの「$」は省略します
+# 執筆時にgcc, g++のバージョンは7.4.0
 
-gcc -o hello1 hello.c
-g++ -o hello2 hello.cpp
+gcc -o hello_gcc7 hello.c
+g++ -o hello_g++7 hello.cpp
 
-./hello1
-./hello2
+./hello_gcc7
+./hello_g++7
 ```
