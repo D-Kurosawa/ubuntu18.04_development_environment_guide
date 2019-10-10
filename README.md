@@ -17,3 +17,5 @@
 ### [5-2. clang のインストール](./sections/sec05-02_install_clang.md)
 
 ### [5-3. 複数バージョンのコンパイラインストールと切替](./sections/sec05-03_install_mulitple_version.md)
+
+### [5-4. Git のインストール](./sections/sec05-04_install_git.md)
