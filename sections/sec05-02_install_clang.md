@@ -6,8 +6,6 @@ C/C++コンパイラでgccと双璧をなすのが`clang`です。gccより後�
 `clang`のインストールは以下のコマンドを実行します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 sudo apt install clang
 ```
 
@@ -16,8 +14,6 @@ sudo apt install clang
 clangが正しくインストールされているか否かはバージョンを表示して確認します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 clang --version
 clang++ --version
 ```
@@ -27,8 +23,6 @@ clang++ --version
 適当なディレクトリに以下の2つのソースコードを記載します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 cd
 mkdir test_compile
 cd test_compile/
@@ -72,7 +66,6 @@ int main()
 ターミナルに`Hello World!`と表示されれば成功です。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
 # 使用したclang, clang++のバージョンは6.0.0
 
 clang -o hello_clang6 hello.c

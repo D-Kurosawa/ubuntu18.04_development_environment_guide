@@ -4,8 +4,6 @@ Linuxでアプリケーションをインストールする際は、ソースコ
 `build-essential`のインストールは以下のコマンドを実行します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 sudo apt install build-essential
 
 # 不要なパッケージが検出された場合は以下のコマンドを実行
@@ -17,8 +15,6 @@ sudo apt autoremove
 gcc, g++, makeが正しくインストールされているか否かはバージョンを表示して確認します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 gcc --version
 g++ --version
 make --version
@@ -31,8 +27,6 @@ make --version
 適当なディレクトリに以下の2つのソースコードを記載します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 cd
 mkdir test_compile
 cd test_compile/
@@ -76,7 +70,6 @@ int main()
 ターミナルに`Hello World!`と表示されれば成功です。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
 # 使用したgcc, g++のバージョンは7.4.0
 
 gcc -o hello_gcc7 hello.c
