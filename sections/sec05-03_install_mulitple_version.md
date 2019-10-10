@@ -4,17 +4,18 @@
 
 ## 1. gccの別バージョンインストール
 
-執筆時点のUbuntu標準のgccのバージョンは`7.x.x`で、デフォルトのUbuntuリポジトリには`v5.x.x`～`8.x.x`までのいくつかのバージョンが登録されています。  \
-デフォルトリポジトリには登録されてませんが、gccの最新バージョンは`9.2.0`です。
+執筆時点のUbuntu標準のgccのバージョンは`7.x.x`で、Ubuntu公式リポジトリには`v5.x.x`～`8.x.x`までのいくつかのバージョンが登録されています。  \
+公式リポジトリには登録されてませんが、gccの最新バージョンは`9.2.0`です。
 
 ### 1-1. デフォルトリポジトリからのインストール
 
-gcc 8.x.xはリポジトリに登録されているので、以下のコマンドでインストールできます。
+gcc 8.x.xは公式リポジトリに登録されているので、以下のコマンドでインストールできます。
 
 ```bash
 sudo apt install gcc-8 g++-8
+```
 
-# インストール後にはバージョンを表示して正しくインストールできているか否かを確認
+```bash
 gcc-8 --version
 g++-8 --version
 ```
@@ -23,7 +24,7 @@ g++-8 --version
 
 PPAとはUbuntuユーザーのチームや個人がそれぞれ管理している非公式リポジトリで、Ubuntuの公式レポジトリからはダンロードできないソフトウェアや最新のバージョンのソフトウェアを手に入れることができます。より多くのソフトウェアを試すことができる反面、動作保証や安全性の保証はないので一定のリスクがあることを確認して下さい。
 
-PPAの便利なところは、一度、信頼するソフトウェアの提供元として追加すると、公式のレポジトリからダウンロードしたソフトウェアと同様にアップデートがあるかどうか自動でチェックし、一括アップデートできることです。ソフトウェアのインストールや削除も公式のソフトと同じように、Ubuntuのソフトウェアセンターから一元管理できます。
+PPAの便利なところは、一度、信頼するソフトウェアの提供元として追加すると、公式レポジトリからダウンロードしたソフトウェアと同様にアップデートがあるかどうか自動でチェックし、一括アップデートできることです。ソフトウェアのインストールや削除も公式のソフトと同じように、Ubuntuのソフトウェアセンターから一元管理できます。
 
 gccの最新バージョンは[Toolchain test builds](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test)からインストールします。
 
@@ -42,8 +43,9 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 
 ```bash
 sudo apt install gcc-9 g++-9
+```
 
-# インストール後にはバージョンを表示して正しくインストールできているか否かを確認
+```bash
 gcc-9 --version
 g++-9 --version
 ```
@@ -99,3 +101,70 @@ alternative gcc (/usr/bin/gcc を提供) には 3 個の選択肢があります
 ```
 
 今回は`gcc-8`を選択したので`gcc --version`で8.3.0と表示されました。
+
+## 2. clangの別バージョンインストール
+
+執筆時点では公式リポジトリに'8.x.x`までのバージョンがいくつかの登録されています。
+
+### 2-1. 最新バージョンのインストール
+
+今回は`apt`コマンドを使用して公式リポジトリの最新版をインストールします。
+
+```bash
+sudo apt install clang-7
+sudo apt install clang-8
+```
+
+### 2-2. バージョンの切替
+
+以下のコマンドで`clang`、および`clang++`の`alternatives`を登録して`--config`オプションで設定します。
+
+---
+
+```bash
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-6.0 60
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-7 70
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-8 80
+```
+
+```bash
+sudo update-alternatives --config clang
+```
+
+```bash
+alternative clang (/usr/bin/clang を提供) には 3 個の選択肢があります。
+
+  選択肢    パス                優先度  状態
+------------------------------------------------------------
+* 0            /usr/bin/clang-8     80        自動モード
+  1            /usr/bin/clang-6.0   60        手動モード
+  2            /usr/bin/clang-7     70        手動モード
+  3            /usr/bin/clang-8     80        手動モード
+
+現在の選択 [*] を保持するには <Enter>、さもなければ選択肢の番号のキーを押してください:
+```
+
+---
+
+```bash
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-6.0 60
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-7 70
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-8 80
+```
+
+```bash
+sudo update-alternatives --config clang++
+```
+
+```bash
+alternative clang++ (/usr/bin/clang++ を提供) には 3 個の選択肢があります。
+
+  選択肢    パス                優先度  状態
+------------------------------------------------------------
+* 0            /usr/bin/clang++-8     80        自動モード
+  1            /usr/bin/clang++-6.0   60        手動モード
+  2            /usr/bin/clang++-7     70        手動モード
+  3            /usr/bin/clang++-8     80        手動モード
+
+現在の選択 [*] を保持するには <Enter>、さもなければ選択肢の番号のキーを押してください:
+```
