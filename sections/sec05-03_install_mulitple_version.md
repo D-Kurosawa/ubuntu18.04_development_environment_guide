@@ -12,8 +12,6 @@
 gcc 8.x.xはリポジトリに登録されているので、以下のコマンドでインストールできます。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 sudo apt install gcc-8 g++-8
 
 # インストール後にはバージョンを表示して正しくインストールできているか否かを確認
@@ -31,11 +29,9 @@ gccの最新バージョンは[Toolchain test builds](https://launchpad.net/~ubu
 
 ### 1-3. リポジトリの登録
 
-`add-apt-repository`を`software-properties-common`で追加インストールした後に`ubuntu-toolchain-r/test`PPAリポジトリをシステムに登録します。
+`add-apt-repository`コマンドを`software-properties-common`で追加インストールした後に`ubuntu-toolchain-r/test`PPAリポジトリをシステムに登録します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
@@ -45,11 +41,61 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 以下のコマンドでgccの最新版をインストールします。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 sudo apt install gcc-9 g++-9
 
 # インストール後にはバージョンを表示して正しくインストールできているか否かを確認
 gcc-9 --version
 g++-9 --version
 ```
+
+### 1-4. バージョンの切替
+
+バージョンの切替には`update-alternatives`コマンドを使用します。このコマンドを使用すると任意の環境に切替えることができます。
+
+以下のコマンドで`alternatives`として登録があれば`--config`オプションで設定します。
+
+```bash
+sudo update-alternatives --list gcc
+```
+
+無い場合は以下のコマンドで登録します。  \
+コマンドは、各バージョンの代替を構成し、優先度をそれに関連付けます。デフォルトのバージョンは、最も高い優先度を持つもので、この場合はgcc-9です。
+
+```bash
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
+```
+
+登録がある場合は、以下のコマンドで表示されます。
+
+```bash
+sudo update-alternatives --list gcc
+```
+
+```bash
+/usr/bin/gcc-7
+/usr/bin/gcc-8
+/usr/bin/gcc-9
+```
+
+次に通常使用するバージョンを以下コマンドで切替えます。
+
+```bash
+sudo update-alternatives --config gcc
+```
+
+```bash
+alternative gcc (/usr/bin/gcc を提供) には 3 個の選択肢があります。
+
+  選択肢    パス          優先度  状態
+------------------------------------------------------------
+* 0            /usr/bin/gcc-9   90        自動モード
+  1            /usr/bin/gcc-7   70        手動モード
+  2            /usr/bin/gcc-8   80        手動モード
+  3            /usr/bin/gcc-9   90        手動モード
+
+現在の選択 [*] を保持するには <Enter>、さもなければ選択肢の番号のキーを押してください:
+```
+
+今回は`gcc-8`を選択したので`gcc --version`で8.3.0と表示されました。
