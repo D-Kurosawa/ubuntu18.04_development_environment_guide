@@ -10,8 +10,6 @@ Ubuntuには`Fire Fox`がデフォルトでインストールされてますが�
 `apt`リポジトリとして`Google Chrome`を追加するには、以下のコマンドを実行します。
 
 ```bash
-# コピペを簡単に行うために、ターミナルの「$」は省略します
-
 # apt リポジトリ
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
