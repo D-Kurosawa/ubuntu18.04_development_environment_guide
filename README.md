@@ -19,3 +19,5 @@
 ### [5-3. 複数バージョンのコンパイラインストールと切替](./sections/sec05-03_install_mulitple_version.md)
 
 ### [5-4. Git のインストール](./sections/sec05-04_install_git.md)
+
+### [5-5. Fortran のインストール](./sections/sec05-05_install_fortran.md)
