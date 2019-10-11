@@ -1,12 +1,12 @@
 # Fortran のインストール
 
-数値計算にFortranを使用する機会が多いのでFortran環境を構築します。
-
 ## 1. Fortran コンパイラのインストール
+
+数値計算に`Fortran`を使用する機会が多いので`Fortranコンパイラ`をインストールし環境構築します。
 
 ### 1-1. gfortran のインストール
 
-Fortranのコンパイラである`gfortran`をインストールするには、以下のコマンドを実行します。
+Fortranコンパイラである`gfortran`をインストールするには、以下のコマンドを実行します。
 
 ```bash
 sudo apt install gfortran
@@ -71,6 +71,8 @@ cd test_compile/
 nano hello.f90
 ```
 
+---
+
 ```fortran
 ! [hello.f90]
 program hello
@@ -80,6 +82,8 @@ program hello
 end program hello
 ```
 
+---
+
 ソースを以下のコマンドでコンパイルして実行します。ターミナルに`Hello World!`と表示されれば成功です。
 
 ```bash
@@ -88,4 +92,84 @@ end program hello
 gfortran hello.f90 -o hello_gfortran8
 
 ./hello_gfortran8
+```
+
+## 2. MPI のインストール
+
+Fortranの数値計算では計算を効率的に行うために`MPI`を使用する機会が多いのでインストールします。
+
+### 2-1. OpenMPI のインストール
+
+今回は使用している人数が最も多いとされている`OpenMPI`を以下のコマンドでインストールします。
+
+```bash
+# libopenmpi-devをインストールしないとコンパイルできません
+sudo apt install openmpi-bin libopenmpi-dev
+```
+
+```bash
+# バージョン確認（３つ方法があります）
+ompi_info
+mpiexec --version
+mpirun --version
+```
+
+### 2-2. サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+nano mpi_hello.f90
+```
+
+---
+
+```fortran
+! [mpi_hello.f90]
+program mpi_hello
+    implicit none
+    include 'mpif.h'
+
+    integer :: mpi_err = 1
+    integer :: mpi_size = 1
+    integer :: my_rank = 0
+
+    call mpi_init(mpi_err)
+
+    if (mpi_err == 0) then
+        call mpi_comm_size(MPI_COMM_WORLD, mpi_size, mpi_err)
+        call mpi_comm_rank(MPI_COMM_WORLD, my_rank, mpi_err)
+    end if
+
+    print *, 'size:', mpi_size, 'rank:', my_rank, 'Hello, World!'
+
+    call mpi_finalize(mpi_err)
+end program mpi_hello
+```
+
+ここで重要なのは`include 'mpif.h'`です。MPIヘッダファイルをincludeすることでMPIが使用可能になります。
+
+---
+
+以下のコマンドでコンパイルして実行します。MPI用のコンパイラは`mpif90`です。  \
+ただし、`mpif90 --version`としても裏でコンパイルしているコンパイラのバージョンが表示されます・
+
+```bash
+mpif90 -o mpi_hello_openmpi mpi_hello.f90
+```
+
+---
+
+MPIは`mpiexec`、もしくは`mpirun`を用いて実行します。  \
+ターミナルに`Hello World!`と2回表示されれば成功です。
+
+```bash
+# mpiexecを用いた実行
+mpiexec -np 2 ./mpi_hello_openmpi
+
+# mpiexecを用いた実行
+mpirun -np 2 ./mpi_hello_openmpi
 ```
