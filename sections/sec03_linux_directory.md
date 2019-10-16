@@ -8,6 +8,8 @@ Linuxは多数のファイルとディレクトリから構成されているシ
 
 まずは下記の一覧を確認して、どのようなディレクトリがあるのか確認してください。
 
+---
+
 - **Linuxの主要ディレクトリ構成**
   - [/](#root-directory)
     - [/bin](#bin)
@@ -48,6 +50,8 @@ Linuxは多数のファイルとディレクトリから構成されているシ
       - [/var/spool/](#varspool)
       - [/var/spool/mail/](#varspoolmail)
       - [/var/tmp/](#vartmp)
+
+---
 
 ## Linuxの主要ディレクトリの説明
 
