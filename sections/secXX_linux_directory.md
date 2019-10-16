@@ -14,10 +14,10 @@ Linuxは多数のファイルとディレクトリから構成されているシ
     - [/boot](#boot)
     - [/dev](#dev)
     - [/etc](#etc)
-      - /etc/X11/
-      - /etc/opt/
-      - /etc/sgml/
-      - /etc/xml/
+      - [/etc/X11/](#etcx11)
+      - [/etc/opt/](#etcopt)
+      - [/etc/sgml/](#etcsgml)
+      - [/etc/xml/](#etcxml)
     - [/home](#home)
     - [/lib](#lib)
     - [/lost+found](#lostfound)
@@ -31,14 +31,14 @@ Linuxは多数のファイルとディレクトリから構成されているシ
     - [/srv](#srv)
     - [/sys](#sys)
     - [/usr](#usr)
-      - /usr/bin/
-      - /usr/include/
-      - /usr/lib/
-      - /usr/local/
-      - /usr/sbin/
-      - /usr/share/
-      - /usr/src/
-      - /usr/X11R6/
+      - [/usr/X11R6/](#usrx11r6)
+      - [/usr/bin/](#usrbin)
+      - [/usr/include/](#usrinclude)
+      - [/usr/lib/](#usrlib)
+      - [/usr/local/](#usrlocal)
+      - [/usr/sbin/](#usrsbin)
+      - [/usr/share/](#usrshare)
+      - [/usr/src/](#usrsrc)
     - [/var](#var)
       - /var/lock/ 使用中リソースを保持するファイル
       - /var/log/ 各種ログファイル
@@ -268,6 +268,10 @@ FTP、WWWなどで利用するユーザー用のスペースです。`/home`と�
 代表的なものの1つに`/usr/local`ディレクトリがありますが、これはRedhat系Linuxのパッケージ管理システムの
 管理対象外で、ソースからコンパイルしたプログラムなどをここに保存するのが一般的です。
 
+##### /usr/X11R6/
+
+XFree86(X Window System)用ファイルが配置されます。
+
 ##### /usr/bin/
 
 `/bin`と同じだが基本的なコマンドではないものが配置されています。具体的には、ユーザーが一般的に使用するコマンドで緊急時のシステム保守に必須ではないコマンドが配置されます。
@@ -308,10 +312,6 @@ FTP、WWWなどで利用するユーザー用のスペースです。`/home`と�
 ##### /usr/src/
 
 ソースコード(Linuxカーネルソースとそのヘッダファイル)などが配置されます。
-
-##### /usr/X11R6/
-
-XFree86(X Window System)用ファイルが配置されます。
 
 #### /var
 
