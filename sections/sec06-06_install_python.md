@@ -1,4 +1,4 @@
-# Pythonのインストール
+# Python のインストール
 
 Ubuntuを含むほとんどのLinuxディストリビューション(FreeBSD、NetBSD、OpenBSD、macOS)では、Pythonはデフォルトでインストールされるか、システムのパッケージリポジトリにPythonを収録しています。これらの環境の多くは、Pythonをコアコンポーネントの一部として利用しています。UbuntuのインストーラーのUbiquityなどはPython上で動作します。
 
@@ -27,3 +27,20 @@ sudo pip install <パッケージ名>
 同じ環境を再現することが簡単に行えます。
 
 環境を分離する方法のうち、もっとも簡単で軽量な方法が、アプリケーションレベルの仮想環境を使用することです。この方法は、Pythonインタープリタとそれが使用可能なパッケージを分離することだけを行います。セットアップは簡単で、小さいプロジェクトやパッケージの開発には十分です。
+
+## 2. pyenv のインストール
+
+### 2-1. 前提条件
+
+独自のPythonインタープリターをコンパイルするには、適切なライブラリとパッケージのインストールが必要です。以下のコマンドで必要なパッケージのインストールします。
+
+```bash
+sudo apt update
+sudo apt -y upgrade
+sudo apt -y install make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+```
+
+- [ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
+- [2018年のPythonプロジェクトのはじめかた](https://qiita.com/sl2/items/1e503952b9506a0539ea)
