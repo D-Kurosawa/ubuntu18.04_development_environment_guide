@@ -8,44 +8,45 @@ Linuxは多数のファイルとディレクトリから構成されているシ
 
 まずは下記の一覧を確認して、どのようなディレクトリがあるのか確認してください。
 
-- [/](#root-directory)
-  - [/bin](#bin)
-  - [/boot](#boot)
-  - [/dev](#dev)
-  - [/etc](#etc)
-    - /etc/opt/ optの設定ファイル
-    - /etc/X11/ X Window System、 version11用の設定ファイル
-    - /etc/sgml/ SGMLの設定ファイル
-    - /etc/xml/ XML の設定ファイル
-  - [/home](#home)
-  - [/lib](#lib)
-  - [/lost+found](#lostfound)
-  - [/media](#media)
-  - [/mnt](#mnt)
-  - [/opt](#opt)
-  - [/proc](#proc)
-  - [/root](#root)
-  - [/sbin](#sbin)
-  - [/tmp](#tmp)
-  - [/srv](#srv)
-  - [/sys](#sys)
-  - [/usr](#usr)
-    - /usr/bin/
-    - /usr/include/
-    - /usr/lib/
-    - /usr/local/
-    - /usr/sbin/
-    - /usr/share/
-    - /usr/src/
-    - /usr/X11R6/
-  - [/var](#var)
-    - /var/lock/ 使用中リソースを保持するファイル
-    - /var/log/ 各種ログファイル
-    - /var/mail/ ユーザーのメールボックス
-    - /var/run/ ブート以降の走行中システムに関する情報
-    - /var/spool/ 処理待ち状態のタスクのスプール
-    - /var/spool/mail/ 互換のために残された、かつてのユーザーのメールボックス
-    - /var/tmp/ 一時ファイル置場 (マルチユーザーモードではこちらの使用が推奨される)
+- **Linuxの主要ディレクトリ構成**
+  - [/](#root-directory)
+    - [/bin](#bin)
+    - [/boot](#boot)
+    - [/dev](#dev)
+    - [/etc](#etc)
+      - /etc/X11/
+      - /etc/opt/
+      - /etc/sgml/
+      - /etc/xml/
+    - [/home](#home)
+    - [/lib](#lib)
+    - [/lost+found](#lostfound)
+    - [/media](#media)
+    - [/mnt](#mnt)
+    - [/opt](#opt)
+    - [/proc](#proc)
+    - [/root](#root)
+    - [/sbin](#sbin)
+    - [/tmp](#tmp)
+    - [/srv](#srv)
+    - [/sys](#sys)
+    - [/usr](#usr)
+      - /usr/bin/
+      - /usr/include/
+      - /usr/lib/
+      - /usr/local/
+      - /usr/sbin/
+      - /usr/share/
+      - /usr/src/
+      - /usr/X11R6/
+    - [/var](#var)
+      - /var/lock/ 使用中リソースを保持するファイル
+      - /var/log/ 各種ログファイル
+      - /var/mail/ ユーザーのメールボックス
+      - /var/run/ ブート以降の走行中システムに関する情報
+      - /var/spool/ 処理待ち状態のタスクのスプール
+      - /var/spool/mail/ 互換のために残された、かつてのユーザーのメールボックス
+      - /var/tmp/ 一時ファイル置場 (マルチユーザーモードではこちらの使用が推奨される)
 
 ## Linuxの主要ディレクトリの説明
 
