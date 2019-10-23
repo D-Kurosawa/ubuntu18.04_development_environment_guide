@@ -95,6 +95,58 @@ pyenv --version
 pyenv update
 ```
 
+### 2-3. pyenvでPythonのインストール
+
+以下のコマンドでイントール可能な`Python`のバージョンを確認します。
+
+```bash
+pyenv install --list
+```
+
+指定したバージョンのインストールは以下のコマンドで行います。
+
+```bash
+pyenv install [バージョン名]
+
+# Python 3.7.5をインストールする場合は
+pyenv install 3.7.5
+```
+
+インストール済みの`Python`を以下のコマンドで確認します。
+
+```bash
+pyenv versions
+* system (set by /home/hogehoge/.pyenv/version)
+  2.7.17
+  3.5.7
+  3.6.9
+  3.7.5
+  3.8.0
+```
+
+先頭に`*`がついているバージョンが現在グローバルに設定されているものを示します。  \
+グローバルバージョンの切替は以下のコマンドで行います。
+
+```bash
+pyenv global 3.7.5
+
+# バージョンが切り替わっているか確認
+pyenv versions
+  system
+  2.7.17
+  3.5.7
+  3.6.9
+* 3.7.5 (set by /home/hogehoge/.pyenv/version)
+  3.8.0
+
+# グローバルの再確認
+python --version
+```
+
+先頭に`*`がついているバージョンとグローバルが一致していれば成功です。
+
+これで任意のバージョンの`Python`をいつでも使えるようになりました。
+
 #### <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
