@@ -42,5 +42,62 @@ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 ```
 
-- [ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
+### 2-2. インストール
+
+今回は[pyenv本家](https://github.com/pyenv/pyenv/)からではなく、[インストーラー](https://github.com/pyenv/pyenv-installer)を用いてインストールします。
+
+以下のコマンドにて`curl`でinstallerをダウンロードして実行します。
+
+```bash
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+```
+
+インストールが進むと以下のようなメッセージが表示されます。
+
+```bash
+WARNING: seems you still have not added 'pyenv' to the load path.
+
+# Load pyenv automatically by adding
+# the following to ~/.bashrc:
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+これは`pyenv`へのパスが通ってない警告で、コメントアウト以降を使用しているシェルの設定ファイルに記載することで自動的にパスが通ります。
+
+以下のコマンドでパスを通します。
+
+```bash
+# 設定の見やすくするためのヘッダなので無くても良い
+echo '' >> ~/.bashrc
+echo '# pyenv' >> ~/.bashrc
+
+# pyenvのパスを通す
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+
+# .bashrcのリロード
+source ~/.bashrc
+
+pyenv --version
+```
+
+バージョン情報が表示されたらインストールが成功です。
+
+### 2-2. アップデート
+
+`pyenv`自体は以下のコマンドでアップデートします。
+
+```bash
+pyenv update
+```
+
+#### <参考元>
+
+- [pyenv](https://github.com/pyenv/pyenv/)
+- [pyenv-installer](https://github.com/pyenv/pyenv-installer)
 - [2018年のPythonプロジェクトのはじめかた](https://qiita.com/sl2/items/1e503952b9506a0539ea)
+- [ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
