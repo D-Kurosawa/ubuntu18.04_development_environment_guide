@@ -159,6 +159,75 @@ python --version
 pip install --upgrade pip
 ```
 
+### 3-2. インストール
+
+以下のコマンドで`pipenv`をインストールします。
+
+```bash
+pip install --user pipenv
+```
+
+ここでパスが通っていないと警告が出た場合は、以下のコマンドでパスを通します。
+
+```bash
+# 設定の見やすくするためのヘッダなので無くても良い
+echo '' >> ~/.bashrc
+echo '# ~/.local/bin (pipenv)' >> ~/.bashrc
+
+# ~/.local/binのパスを通す
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
+# .bashrcのリロード
+source ~/.bashrc
+
+pipenv --version
+```
+
+バージョン情報が表示されたらインストールが成功です。
+
+#### 通常のインストールとユーザーインストールの違い
+
+- [pip公式 doc : User Installs](https://pip.pypa.io/en/stable/user_guide/#user-installs)
+
+`pip`でパッケージをインストールする場合、`pip install`コマンドに`--user`オプションを付けるか否かの2通りの方法があります。`--user`オプションを付けるインストール方法をユーザーインストールと言います。それぞれの方法でインストールする場合以下のようになります。
+
+|インストール方法|コマンド|管理者権限|イントール先|
+|:---|:---|:---|:---|
+|通常|`pip install [package名]`|必要|`/usr`下|
+|ユーザーインストール|`pip install --user [package名]`|必要ない|`~/.local`下|
+
+これらの違いはパッケージがインストールされるディレクトリです。通常のインストールでは管理者権限が必要な`/usr`下に、ユーザーインストールでは管理者権限の必要ないホームディレクトリ下の`~/.local`(ベースバイナリディレクトリという)下にパッケージがインストールされます。
+
+#### ユーザーインストールのメリット
+
+- 管理者権限のないユーザが`pip`でパッケージ管理を行えます。
+- システム全体に関わるパッケージを壊さずにパッケージをインストールできます(システムを汚さない)。
+
+#### ユーザーインストール先の確認
+
+ユーザーインストールでパッケージをインストールした場合、デフォルトとしてベースバイナリディレクトリ`~/.local`下にパッケージがインストールされます。  \
+以下のコマンドでベースバイナリディレクトリを出力することができます。
+
+```bash
+python -m site --user-base
+```
+
+#### ユーザーインストール先の変更
+
+ベースバイナリディレクトリは`PYTHONUSERBASE`という環境変数を設定することで変更できます。例えば、`~/.local`ではなく`~/my-python`というディレクトリに変更したい場合は、以下のコマンドで`.bashrc`を変更することで設定できます。
+
+```bash
+echo 'export PYTHONUSERBASE=~/my-appenv' >> ~/.bashrc
+```
+
+#### ユーザーインストールしたパッケージの更新
+
+以下のコマンドでユーザーインストールしたパッケージを更新できます。
+
+```bash
+pip install --user --upgrade [packege名]
+```
+
 #### <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
@@ -166,3 +235,5 @@ pip install --upgrade pip
 - [2018年のPythonプロジェクトのはじめかた](https://qiita.com/sl2/items/1e503952b9506a0539ea)
 - [Ubuntu18.04にpyenvをインストールして美しいpython環境を構築する](https://www.komee.org/entry/2018/10/25/120000)
 - [Ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
+- [Pipenvと仮想環境](https://pipenv-ja.readthedocs.io/ja/translate-ja/install.html#installing-pipenv)
+- [Python：pip における管理者権限と user install](https://pyteyon.hatenablog.com/entry/2019/05/24/003924)
