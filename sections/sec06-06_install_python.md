@@ -228,6 +228,97 @@ echo 'export PYTHONUSERBASE=~/my-appenv' >> ~/.bashrc
 pip install --user --upgrade [packege名]
 ```
 
+## 4. pipenv の仮想環境操作
+
+### 4-1. プロジェクトの初期化
+
+新規のプロジェクトの初期化方法は、プロジェクトのディレクトリに移動して以下のコマンドを実行します。
+
+```bash
+# Python3系で初期化する例
+pipenv --python 3
+```
+
+自動で仮想環境が作成されて`Pipfile`というファイルが生成されます。
+
+Pythonのバージョンの指定は3.7などより詳細に指定もできます。また`pyenv`を使用しているので、環境に入っていないバージョンを指定したときには`pyenv`と連動してPythonのインストールが自動的に行われます。
+
+```bash
+# Python3.8.0で初期化する例
+pipenv --python 3.8.0
+```
+
+### 4-2. プロジェクトのディレクトリに仮想環境を作成
+
+`pipenv`で仮想環境を作成すると通常は`$HOME/.local/share/virtualenvs`下に仮想環境が作成されます。仮想環境が多くなってくると、どのプロジェクトがどの仮想環境を使用しているのかの判断が難しくなってくるので、プロジェクト直下のディレクトリに仮想環境を作成するように変更します。
+
+以下のコマンドでプロジェクトのディレクトリに仮想環境を作成するよう変更できます。
+
+```bash
+# 設定の見やすくするためのヘッダなので無くても良い
+echo '' >> ~/.bashrc
+echo '# pipenv directory' >> ~/.bashrc
+
+# 環境変数を設定
+echo 'export PIPENV_VENV_IN_PROJECT=true' >> ~/.bashrc
+```
+
+この設定後にプロジェクトの初期化を行うと`./.venv`ディレクトリに仮想環境が生成されます。
+
+### 4-3. 仮想環境の削除
+
+以下のコマンドで仮想環境を削除できます。
+
+```bash
+pipenv --rm
+```
+
+### 4-4. 仮想環境の確認
+
+以下のコマンドで仮想環境のパスを確認できます。
+
+```bash
+pipenv --venv
+```
+
+### 4-5. パッケージのインストール
+
+以下のコマンドでパッケージのインストールを行います。
+
+```bash
+# Pandasをインストールする例
+pipenv install pandas
+```
+
+まだ仮想環境を作っていなければ仮想環境が自動的に作られて、そこにパッケージがインストールされます。また`pipenv`からパッケージをインストールすると`Pipfile`にパッケージが追加されます。このときに`Pipfile.lock`が自動で生成され、実際にインストールされたパッケージの詳細なバージョンや依存パッケージの情報などが記録されます。これをもとに他PCで環境を再現することが簡単にできます。
+
+`pipenv`を使うとパッケージの管理や仮想環境の生成が自動的に行われて便利です。  \
+チームにPythonに不慣れなメンバーがいても、pipを直接使ってrequirements.txtを更新し忘れてしまったり、仮想環境を作らずに関係のないパッケージまで管理されてしまったりを防ぐことができます。
+
+また、バージョンを指定してパッケージをインストールする場合は以下のコマンドのように行います。
+
+```bash
+# Pandas 0.24.2 をインストールする例
+pipenv install pandas==0.24.2
+```
+
+### 4-6. 仮想環境の出入
+
+仮想環境へは以下のコマンドで入ります。
+
+```bash
+pipenv shell
+```
+
+また、仮想環境を出る際は`exit`だけでOKです。
+
+スクリプトは`Profile`への登録と`pipenv run`を組み合わせることでdebugなどを行うことができますが、スクリプトに登録するほどでもないPythonのコードを個別に実行する際は、以下のコマンドを使用することで仮想環境に入らずにPythonのコードを実行できます。
+
+```bash
+# main.pyを実行する例
+pipenv run python main.py
+```
+
 #### <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
@@ -237,3 +328,4 @@ pip install --user --upgrade [packege名]
 - [Ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
 - [Pipenvと仮想環境](https://pipenv-ja.readthedocs.io/ja/translate-ja/install.html#installing-pipenv)
 - [Python：pip における管理者権限と user install](https://pyteyon.hatenablog.com/entry/2019/05/24/003924)
+- [Pipenvを使ったPython開発まとめ](https://qiita.com/y-tsutsu/items/54c10e0b2c6b565c887a)
