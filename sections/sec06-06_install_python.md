@@ -147,9 +147,22 @@ python --version
 
 これで任意のバージョンの`Python`をいつでも使えるようになりました。
 
+## 3. pipenv のインストール
+
+### 3-1. pipの更新
+
+`pipenv`は`pip`を用いてインストールするため、まずは`pip`を更新します。
+
+ただし、システム自身の`pip`は更新したくないため、`pyenv`でグローバルを`system`以外のバージョンに設定したのちに以下のコマンドで`pip`を更新します。
+
+```bash
+pip install --upgrade pip
+```
+
 #### <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
 - [pyenv-installer](https://github.com/pyenv/pyenv-installer)
 - [2018年のPythonプロジェクトのはじめかた](https://qiita.com/sl2/items/1e503952b9506a0539ea)
-- [ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
+- [Ubuntu18.04にpyenvをインストールして美しいpython環境を構築する](https://www.komee.org/entry/2018/10/25/120000)
+- [Ubuntuにpyenvを導入](https://crowrabbit.hatenablog.com/entry/2019/05/14/ubuntu%E3%81%ABpyenv%E3%82%92%E5%B0%8E%E5%85%A5)
