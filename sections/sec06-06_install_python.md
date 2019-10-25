@@ -319,6 +319,56 @@ pipenv shell
 pipenv run python main.py
 ```
 
+### 4-7. サンプルプログラム実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile/hello_py
+cd test_compile/hello_py/
+nano hello.py
+```
+
+---
+
+```python
+# [hello.py]
+import platform
+
+
+def main():
+    print('Hello, World!', 'version', platform.python_version())
+
+
+if __name__ == '__main__':
+    main()
+```
+
+ここでスクリプトを実行します。
+
+```bash
+python hello.py
+```
+
+`Hello, World!`の後ろに`pyenv`で設定したグローバルバージョンが表示されれば成功です。
+
+---
+
+次に仮想環境を作成します。ここでは`3.8.0`を指定しています。グローバルバージョンと異なるバージョンを指定しないとテストが成功したか分からないので、その点に注意してください。
+
+```bash
+pipenv --python 3.8.0
+```
+
+仮想環境を使用して作成したスクリプトを実行します。
+
+```bash
+pipenv run python hello.py
+```
+
+`Hello, World! version 3.8.0`と表示されれば成功です。
+
 #### <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
