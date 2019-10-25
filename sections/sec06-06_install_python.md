@@ -167,7 +167,15 @@ pip install --upgrade pip
 pip install --user pipenv
 ```
 
-ここでパスが通っていないと警告が出た場合は、以下のコマンドでパスを通します。
+ここでパスが通っていないと警告が出た場合はターミナルを再起動します。通常は`$HOME/.local/bin`に対して自動でパスが通ります。
+
+```bash
+pipenv --version
+```
+
+バージョン情報が表示されたらインストールが成功です。
+
+この状態でもパスが通っていなければ、以下のコマンドでパスを通します。
 
 ```bash
 # 設定の見やすくするためのヘッダなので無くても良い
@@ -175,15 +183,13 @@ echo '' >> ~/.bashrc
 echo '# ~/.local/bin (pipenv)' >> ~/.bashrc
 
 # ~/.local/binのパスを通す
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 # .bashrcのリロード
 source ~/.bashrc
 
 pipenv --version
 ```
-
-バージョン情報が表示されたらインストールが成功です。
 
 #### 通常のインストールとユーザーインストールの違い
 
