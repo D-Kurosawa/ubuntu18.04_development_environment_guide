@@ -30,6 +30,44 @@ go version
 
 バージョン情報が設定されれば成功です。
 
+### 2. サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+nano hello.go
+```
+
+```go
+// [hello.go]
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Hello, World!")
+}
+```
+
+---
+
+ソースを以下のコマンドでコンパイルして実行します。ターミナルに`Hello World!`と表示されれば成功です。
+
+```bash
+go build -o hello_go hello.go
+
+./hello_go
+```
+
+コンパイルして実行するのがダルいという場合は`go run`を用いると、自動的にコンパイル・実行してくれますが、カレントディレクトリ以下の全ファイルを読み込むわけではないという点には注意が必要です。
+
+```bash
+go run hello.go
+```
+
 ### <参考元>
 
 - [初めてのGo！インストールまで](https://qiita.com/inexp_eng4432/items/08dce692894c92ae08ee)
