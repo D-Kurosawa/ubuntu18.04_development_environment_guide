@@ -23,3 +23,5 @@
 ### [6-4. Git のインストール](./sections/sec06-04_install_git.md)
 
 ### [6-5. Fortran のインストール](./sections/sec06-05_install_fortran.md)
+
+### [6-6. Python のインストール](./sections/sec06-06_install_python.md)
