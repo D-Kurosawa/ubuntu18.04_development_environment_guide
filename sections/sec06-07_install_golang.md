@@ -68,6 +68,46 @@ go build -o hello_go hello.go
 go run hello.go
 ```
 
+### 3. 環境変数 GOPATH
+
+Goでは、環境変数GOPATHに保存されたパス(以降、単にGOPATHと呼びます)を開発時の作業ディレクトリとして扱います。 GOPATHを利用することで、外部ライブラリの導入やビルド作業を非常に簡単に行うことができます。Go1.8よりGOPATHが未設定の場合、デフォルトで`$HOME/go`となるようになりました。
+
+#### 3-1. GOPATHの構成
+
+GOPATH直下には、3つのディレクトリを配置します。
+
+- bin
+  - 実行ファイルが格納されるディレクトリ(go installコマンドで自動生成されます)
+- pkg
+  - ビルドしたパッケージオブジェクトが格納されるディレクトリ(go buildをはじめとする各種コマンドで自動生成されます)
+- src
+  - パッケージごとのソースコードを配置するディレクトリ。srcディレクトリは最初に自分で用意する必要がありますが、他のディレクトリはコマンドで自動生成されます。
+
+#### 3-2. GOPATHの確認
+
+以下コマンドでGoの環境を確認できます。`GOPATH`がどこに設定されているか確認をしてください。
+
+```bash
+go env
+```
+
+#### 3-3. GOPATHの設定
+
+以下のコマンドで環境変数`$GOPATH`、および`$GOPATH/bin`にパスを通します。
+
+```bash
+# 設定の見やすくするためのヘッダなので無くても良い
+echo '' >> ~/.bashrc
+echo '# Go Lang' >> ~/.bashrc
+
+# GOPATHの設定
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
+
+# .bashrcのリロード
+source ~/.bashrc
+```
+
 ### <参考元>
 
 - [初めてのGo！インストールまで](https://qiita.com/inexp_eng4432/items/08dce692894c92ae08ee)
