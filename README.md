@@ -8,9 +8,9 @@
 
 ## [3. Linux のディレクトリ構成](./sections/sec03_linux_directory.md)
 
-## [4. ブラウザのインストール](./sections/sec03_install_browser.md)
+## [4. ブラウザのインストール](./sections/sec04_install_browser.md)
 
-## [5. エディタのインストール](./sections/sec04_install_editor.md)
+## [5. エディタのインストール](./sections/sec05_install_editor.md)
 
 ## 6. 開発環境の構築
 
