@@ -25,3 +25,5 @@
 ### [6-5. Fortran のインストール](./sections/sec06-05_install_fortran.md)
 
 ### [6-6. Python のインストール](./sections/sec06-06_install_python.md)
+
+### [6-7. Go のインストール](./sections/sec06-07_install_golang.md)
