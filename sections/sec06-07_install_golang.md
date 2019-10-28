@@ -108,9 +108,22 @@ echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
+#### 3-4. パッケージのイントール
+
+Goには様々なパッケージが用意されており`go get`コマンドを用いることでインストールできます。ここでは開発支援ツールとしてメジャーな`Go Tools`を以下コマンドでインストールします。
+
+```bash
+go get -u golang.org/x/tools/...
+```
+
+`$GOPATH/bin`に様々なツールがあれば成功です。
+
 ### <参考元>
 
+- [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 - [初めてのGo！インストールまで](https://qiita.com/inexp_eng4432/items/08dce692894c92ae08ee)
 - [GOPATH は適当に決めて問題ない](https://qiita.com/yuku_t/items/c7ab1b1519825cc2c06f)
 - [go run と go buildの違い](http://nununu.hatenablog.jp/entry/2016/09/20/210000)
 - [GolangのGOPATHやGOROOTについて](https://tech.librastudio.co.jp/entry/index.php/2018/02/20/post-1792/)
+- [他言語から来た人がGoを使い始めてすぐハマったこととその答え](https://qiita.com/mumoshu/items/0d2f2a13c6e9fc8da2a4)
+- [Go言語 - 開発支援ツール](https://blog.y-yuki.net/entry/2018/08/08/011229)
