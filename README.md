@@ -27,3 +27,5 @@
 ### [6-6. Python のインストール](./sections/sec06-06_install_python.md)
 
 ### [6-7. Go のインストール](./sections/sec06-07_install_golang.md)
+
+### [6-8. Rust のインストール](./sections/sec06-08_install_rust.md)
