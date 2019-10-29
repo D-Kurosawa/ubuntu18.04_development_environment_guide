@@ -24,6 +24,31 @@ rustc --version
 
 バージョン情報が表示されれば成功です。
 
+## 2. サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+touch hello.rs
+```
+
+```rust
+fn main() {
+    println!("Hello, World!");
+}
+```
+
+ソースを以下のコマンドでコンパイルして実行します。ターミナルに`Hello World!`と表示されれば成功です。
+
+```bash
+rustc -o hello_rust hello.rs
+
+./hello_rust
+```
+
 ### <参考元>
 
 - [Rust本家](https://www.rust-lang.org/)
