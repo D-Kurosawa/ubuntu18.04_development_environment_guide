@@ -118,7 +118,7 @@ go get -u golang.org/x/tools/...
 
 `$GOPATH/bin`に様々なツールがあれば成功です。
 
-### <参考元>
+## <参考元>
 
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 - [初めてのGo！インストールまで](https://qiita.com/inexp_eng4432/items/08dce692894c92ae08ee)
