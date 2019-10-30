@@ -375,7 +375,7 @@ pipenv run python hello.py
 
 `Hello, World! version 3.8.0`と表示されれば成功です。
 
-#### <参考元>
+## <参考元>
 
 - [pyenv](https://github.com/pyenv/pyenv/)
 - [pyenv-installer](https://github.com/pyenv/pyenv-installer)

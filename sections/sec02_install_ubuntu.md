@@ -71,7 +71,7 @@ LANG=C xdg-user-dirs-gtk-update
 
 `xdg-user-dirs-gtk-update`を実行しても何も起こらない場合は`$ echo 1234 .config/user-dir.locale`としたあと`xdg-user-dirs-gtk-update`すればOKです。（"1234"は適当な文字列でOK）
 
-#### <参考元>
+## <参考元>
 
 - [Ubuntuでホームディレクトリの中身を英語にする](https://qiita.com/taiko19xx/items/d1a001bfc25245b91354)
 - [「デスクトップ」等のディレクトリ名を英語にする](https://qiita.com/take5249/items/13ada73bbd01ee12a2c3)

@@ -127,7 +127,7 @@ Cargoをまとめると以下のようになります。
 - ビルドの結果をコードと同じディレクトリに保存するのではなく、Cargoは`target/debug`ディレクトリに格納する。
 - 最適化をかける際は`cargo build --release`でビルドし、`target/release`の実行可能ファイルを使用する。
 
-### <参考元>
+## <参考元>
 
 - [Rust本家](https://www.rust-lang.org/)
 - [Rustの日本語ドキュメント](https://doc.rust-jp.rs/)
