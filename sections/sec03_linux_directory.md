@@ -1,4 +1,4 @@
-# Linuxのディレクトリ
+# Linuxのディレクトリ構成
 
 ## Linuxの主要ディレクトリ一覧
 
@@ -7,6 +7,8 @@ Linuxは多数のファイルとディレクトリから構成されているシ
 ディストリビューションによって若干の違いはありますが、**FHS**(**Filesystem Hierarchy Standard**)というディレクトリ構成規格によって統一化が図られています。
 
 まずは下記の一覧を確認して、どのようなディレクトリがあるのか確認してください。
+
+---
 
 - **Linuxの主要ディレクトリ構成**
   - [/](#root-directory)
@@ -48,6 +50,8 @@ Linuxは多数のファイルとディレクトリから構成されているシ
       - [/var/spool/](#varspool)
       - [/var/spool/mail/](#varspoolmail)
       - [/var/tmp/](#vartmp)
+
+---
 
 ## Linuxの主要ディレクトリの説明
 
