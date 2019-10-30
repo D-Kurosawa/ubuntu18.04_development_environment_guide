@@ -53,6 +53,31 @@ Linuxは多数のファイルとディレクトリから構成されているシ
 
 ---
 
+## WindowとLinuxのディレクトリ比較
+
+FHSの正確な定義ではないですが、ざっくりこんな使われ方だから近いという趣旨で分類しています。
+
+|Windows|働き|Linux|
+|:---|:---|:---|
+|レジストリ|Windowsのシステム設定・各種ソフトウェアの動作設定はレジストリに保存するのが一般的だが、UNIX系ではソフトウェアごとのテキストベース設定ファイルに保存するのが一般的。|/etc|
+|C:\Windows\System32\drivers\etc|WindowsにもUNIX由来の設定ファイルがあるのでそれ用のディレクトリ…といってもほとんどの開発者にとってはhosts格納専用でしょう。|/etc|
+|C:\Windows|コマンド。/binは一般ユーザ用で/sbinは管理用。/usr配下のはこれらの別名のことが多いが、独立していてオプショナルなコマンドを格納している構成もある。ここをいじっていいのはパッケージマネージャだけ。|/bin, /sbin, /usr/bin, /usr/sbin|
+|C:\Windows\System32|共有ライブラリ。ここをいじっていいのはパッケージマネージャだけ。|/lib|
+|C:\Windows\System32\drivers|ドライバ。UNIX系ではカーネルモジュールの一種としてドライバを位置づける。|/lib/modules/【OSバージョン】|
+|C:\Program Files\Common Files|ユーザがインストールした共有ライブラリ|/usr/local/lib|
+|C:\Program Files|ユーザがインストールしたプログラム。ディレクトリを作る。|/opt|
+|（該当なし。ユーザーが自分で格納用ディレクトリを作ることが多い）|ユーザがインストールしたプログラム。ディレクトリを作らない単体のもの。|/usr/local/bin|
+|C:\Users\【ユーザー名】|ユーザーのホームディレクトリ。UNIXでは管理者だけ/home以下でなく/rootというホームディレクトリを持つ。|/home/【ユーザー名】, /root|
+|（ユーザーの）スタートアップ。とても深いディレクトリ。コマンド`shell:startup`で開けます。|ログイン時に実行されるプログラム。Windowsではショートカットを集めたフォルダだがUNIXではスクリプトファイル。|/home/【ユーザー名】/.bash_profile, .bash_login, .profile このほか、シェルプログラム起動のたびに実行される .bashrcも|
+|（全員の）スタートアップ|〃|/etc/profile|
+|コントロール パネル\システム\システムの詳細設定\環境変数|DOS時代はAUTOEXEC.BATで設定していた環境変数をWindowsではコントロールパネルで設定するようになりましたが、UNIXではDOSと同じく起動スクリプトで設定します。 注意点としてUNIXの環境変数はDOS/Windowsのものと違い、明示的にexportしたものしか子プロセスに引き継がれません。|/home/【ユーザー名】/.bash_profile, .bash_login, .profile, /etc/profile|
+|C:\Users\【ユーザー名】\AppData\Roaming, Local, LocalLow|アプリが作るデータディレクトリ。WindowsではAppData以下に作られるが、UNIX系ではホームディレクトリ直下。.config以下に作る場合も。|/home/【ユーザー名】, /home/【ユーザー名】/.config|
+|C:\ProgramData|サービスのデータ・ログ|/var|
+|C:\inetpub|Webコンテンツ|/var/www|
+|C:\Windows\Temp, C:\Users\【ユーザー名】\AppData\Local\temp|一時ファイル置き場。自動削除はされない。消えてるとしたら誰かがタイマーで消している。|/var/tmp|
+
+実行ファイル1本のプログラムを展開するなら`/usr/local/bin/`、ディレクトリ構造持ったアプリを展開するなら`/opt/`あたりで良いと思います。
+
 ## Linuxの主要ディレクトリの説明
 
 おさえて置くべき主要ディレクトリの説明をします。また、読み方も一緒に記載しますが、現場によっては、違う読み方があるかも知れないのでその点は注意が必要です。
@@ -359,3 +384,7 @@ manコマンドで表示する為に整形したデータなど、一時的な�
 ### /var/tmp/
 
 一時ファイル置場です。マルチユーザーモードではこちらの使用が推奨されます。
+
+## <参考元>
+
+- [WindowsのあのフォルダはUNIX/Linuxで言えばあそこだ](https://qiita.com/yuba/items/669f718fe6e62dbaab19)
