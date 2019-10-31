@@ -29,3 +29,5 @@
 ### [6-7. Go のインストール](./sections/sec06-07_install_golang.md)
 
 ### [6-8. Rust のインストール](./sections/sec06-08_install_rust.md)
+
+### [6-9. Java のインストール](./sections/sec06-09_install_java.md)
