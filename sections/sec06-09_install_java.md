@@ -91,6 +91,36 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## 4. サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+nano HelloWorld.java
+```
+
+```java
+// [HelloWorld.java]
+public class HelloWorld {
+    public static void main(String[] args){
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+---
+
+ソースを以下のコマンドでコンパイルして実行します。ターミナルに`Hello World!`と表示されれば成功です。
+
+```bash
+javac HelloWorld.java
+
+java HelloWorld
+```
+
 ## <参考元>
 
 - [SDKMAN公式](https://sdkman.io/)
