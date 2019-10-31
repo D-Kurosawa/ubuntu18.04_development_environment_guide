@@ -43,6 +43,29 @@ sdk help
 
 ヘルプが表示されれば成功です。
 
+### 3-2. OpenJDK のインストール
+
+以下のコマンドで`OpenJDK`をイントールします。今後の`OpenJDK`の主流は`AdoptOpenJDK`になるとのことなのでバージョン指定をしてインストールしても良いのですが、2019年10月時点では`SDKMAN`の標準は`AdoptOpenJDK`となっているので、そのままイントールします。
+
+```bash
+sdk install java
+```
+
+イントールが完了したら、以下のコマンドでどの`JDK`がインストールされたのか確認します。
+
+```bash
+sdk list java
+```
+
+イントールされているバージョンの`Status`が`installed`になっていることを確認してください。
+
+```bash
+java --version
+```
+
+最後に上記コマンドでバージョン情報が表示されれば成功です。
+
 ## <参考元>
 
 - [SDKMAN公式](https://sdkman.io/)
+- [JDK、Oracle JDK、OpenJDK、Java SEってなに？](https://qiita.com/nowokay/items/c1de127354cd1b0ddc5e)
