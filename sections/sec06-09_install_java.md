@@ -60,12 +60,39 @@ sdk list java
 イントールされているバージョンの`Status`が`installed`になっていることを確認してください。
 
 ```bash
-java --version
+java -version
 ```
 
 最後に上記コマンドでバージョン情報が表示されれば成功です。
+
+### 3-3. JAVA_HOMEの設定
+
+通常は環境変数`JAVA_HOME`、および`PATH`はイントール時に自動設定されます。以下のコマンドで環境変数を確認してください。
+
+```bash
+echo $JAVA_HOME
+echo $PATH
+```
+
+`JAVA_HOME`に何も表示されない場合は、以下のコマンドで設定し再度、環境変数を確認してください。
+
+```bash
+cd ~
+
+# 設定の見やすくするためのヘッダなので無くても良い
+echo '' >> ~/.bashrc
+echo '# JAVA_HOME' >> ~/.bashrc
+
+# JAVA_HOMEの設定
+echo 'export JAVA_HOME=$HOME/.sdkman/candidates/java/current' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+
+# .bashrcのリロード
+source ~/.bashrc
+```
 
 ## <参考元>
 
 - [SDKMAN公式](https://sdkman.io/)
 - [JDK、Oracle JDK、OpenJDK、Java SEってなに？](https://qiita.com/nowokay/items/c1de127354cd1b0ddc5e)
+- [OpenJDK時代のJavaをMacで切り替える方法](https://qiita.com/seri/items/cbfe1886ec902029529d)
