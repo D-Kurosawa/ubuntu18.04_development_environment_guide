@@ -86,6 +86,30 @@ rbenv global 2.6.5
 ruby --version
 ```
 
+## 2. サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+nano hello.rb
+```
+
+```ruby
+# [hello.rb]
+print "Hello, World!\n"
+```
+
+---
+
+Rubyはスクリプト言語なので、ソースを以下のコマンドで実行します。ターミナルに`Hello World!`と表示されれば成功です。
+
+```bash
+ruby hello.rb
+```
+
 ## <参考元>
 
 - [Ruby公式](https://www.ruby-lang.org/ja/)
