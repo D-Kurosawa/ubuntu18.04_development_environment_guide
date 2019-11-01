@@ -60,5 +60,6 @@ java -jar hellokt.jar
 ## <参考元>
 
 - [Kotlin公式](https://dogwood008.github.io/kotlin-web-site-ja/)
-- [あああ](https://www.utakata.work/entry/20180124/1516781378)
-- [いいい](https://qiita.com/hiko1129/items/5ac2ffe82e83bb53f08f)
+- [KotlinをインストールしてHello Worldする](https://www.utakata.work/entry/20180124/1516781378)
+- [SDKMANを使ったKotlinの開発環境の構築](https://qiita.com/hiko1129/items/5ac2ffe82e83bb53f08f)
+- [Kotlin 勉強メモ](https://qiita.com/opengl-8080/items/d7f56f3a39cb905104db)
