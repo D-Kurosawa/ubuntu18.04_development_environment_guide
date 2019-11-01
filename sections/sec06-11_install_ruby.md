@@ -6,7 +6,7 @@ Rubyはシンプルで書きやすく、オブジェクト指向が手軽に学�
 
 ## 1. イントール
 
-### 1-2. rbenv のインストール
+### 1-1. rbenv のインストール
 
 rbenvはRubyのバージョンを管理するパッケージマネージャーです。[rbenv公式](https://github.com/rbenv/rbenv)のインストールガイドに従って、以下のコマンドでインストールします。
 
@@ -38,6 +38,28 @@ rbenv --version
 ```bash
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
+
+### 1-2. ruby-build のインストール
+
+rbenvでRubyをイントールするには`ruby-build`のビルドシステムが必要です。`ruby-build`には必要となる`apt`パッケージがありますので[ruby-buildのWiki](https://github.com/rbenv/ruby-build/wiki)を参考に、以下のコマンドでインストールします。
+
+```bash
+sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev \
+zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+```
+
+次に[ruby-build公式](https://github.com/rbenv/ruby-build)に従って、以下のコマンドでインストールします。
+
+```bash
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
+
+ruby-doctorスクリプトで**rbenv install**の項目を確認して`ruby-build`のパスが表示されれば成功です。
+
+```bash
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+```
+
 
 ## <参考元>
 
