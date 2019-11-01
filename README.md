@@ -29,3 +29,9 @@
 ### [6-7. Go のインストール](./sections/sec06-07_install_golang.md)
 
 ### [6-8. Rust のインストール](./sections/sec06-08_install_rust.md)
+
+### [6-9. Java のインストール](./sections/sec06-09_install_java.md)
+
+### [6-10. Kotlin のインストール](./sections/sec06-10_install_kotlin.md)
+
+### [6-11. Ruby のインストール](./sections/sec06-11_install_ruby.md)
