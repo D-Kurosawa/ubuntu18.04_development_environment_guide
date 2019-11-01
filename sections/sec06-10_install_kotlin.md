@@ -18,7 +18,47 @@ kotlin -version
 
 上記のコマンドでバージョン情報が表示されれば成功です。
 
+## サンプルプログラムのコンパイル＆実行
+
+適当なディレクトリに以下のソースコードを記載します。
+
+```bash
+cd
+mkdir test_compile
+cd test_compile/
+nano hello.kt
+```
+
+```kotlin
+// [hello.kt]
+fun main(args: Array<String>) {
+   println("Hello, World!")
+}
+```
+
+---
+
+ソースを以下のコマンドでコンパイルして実行します。ターミナルに`Hello World!`と表示されれば成功です。
+
+```bash
+kotlinc hello.kt
+
+# ここで<HelloKt.class>というファイルが作成されるので実行
+# 実行にはJavaと同様に拡張子(.class)は要らない
+
+kotlin HelloKt
+```
+
+また、`-include-runtime`オプションを指定すると、Kotlinのランタイムも一緒にまとめた`jar`ファイルが生成されます。よって、普通に**java**コマンドで実行できますので、Kotlinをインストールしていない環境でも実行できます。
+
+```bash
+kotlinc hello.kt -include-runtime -d hellokt.jar
+
+java -jar hellokt.jar
+```
 
 ## <参考元>
 
-- [dummy](dummy)
+- [Kotlin公式](https://dogwood008.github.io/kotlin-web-site-ja/)
+- [あああ](https://www.utakata.work/entry/20180124/1516781378)
+- [いいい](https://qiita.com/hiko1129/items/5ac2ffe82e83bb53f08f)
