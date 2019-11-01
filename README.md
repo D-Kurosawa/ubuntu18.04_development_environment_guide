@@ -33,3 +33,5 @@
 ### [6-9. Java のインストール](./sections/sec06-09_install_java.md)
 
 ### [6-10. Kotlin のインストール](./sections/sec06-10_install_kotlin.md)
+
+### [6-11. Ruby のインストール](./sections/sec06-11_install_ruby.md)
