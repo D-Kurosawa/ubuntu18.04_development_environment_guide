@@ -60,6 +60,31 @@ ruby-doctorスクリプトで**rbenv install**の項目を確認して`ruby-buil
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
 
+### 1-3. Rubyのインストール
+
+以下のコマンドを用いてインストールできる`Ruby`のバージョンを確認します。
+
+```bash
+rbenv install --list
+```
+
+2019年10月時点での最新安定版は`2.6.5`なので選択してインストールします。
+
+```bash
+rbenv install 2.6.5
+```
+
+次に`rbenv`の`global`にイントールしたバージョンを設定します。
+
+```bash
+rbenv global 2.6.5
+```
+
+最後に以下のコマンドでバージョン情報が表示されれば成功です。
+
+```bash
+ruby --version
+```
 
 ## <参考元>
 
