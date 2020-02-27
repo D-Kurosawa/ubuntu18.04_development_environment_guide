@@ -25,3 +25,6 @@ cd /opt/jetbrains-toolbox-*/
 ```
 
 ## <参考元>
+
+- [便利なJetBrains Toolbox App、お使いですか？](https://blog.jetbrains.com/jp/2018/10/09/1294)
+- [Ubuntu 18.04にJetBrains Toolboxをインストールする](https://note.com/setoyama60jp/n/neae051df58f8)
