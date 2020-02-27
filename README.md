@@ -37,3 +37,5 @@
 ### [6-11. Ruby のインストール](./sections/sec06-11_install_ruby.md)
 
 ## [7. JetBrains IDEのインストール](./sections/sec07_install_jetbrains.md)
+
+## [8. GitHubへのSSHキー登録](./sections/sec08_github_ssh.md)
