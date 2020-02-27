@@ -46,6 +46,20 @@ Enter file in which to save the key (/Users/(username)/.ssh/id_rsa):id_git_rsa
 
 ちなみに、名前を指定しない時は勝手に`~/.ssh`内に鍵を生成してくれますが、上記のように名前を指定するときは`~/.ssh`内にいないとこの中に生成してくれないので注意です。
 
+### 3. SSHキーをssh-agentに追加
+
+以下のコマンドでバックグラウンドで`ssh-agent`を開始します。
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+SSHプライベートキーを`ssh-agent`に追加します。キーを別の名前で作成したか、別の名前を持つ既存のキーを追加しようとしている場合は、コマンド内の`id_rsa`を秘密鍵ファイルの名前で置き換えてください。
+
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
 ## <参考元>
 
 - [GitHub公式](https://help.github.com/ja/github/authenticating-to-github/connecting-to-github-with-ssh)
